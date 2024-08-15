@@ -1,14 +1,17 @@
 import Image from "next/image";
 import {Navbar, Nav,Container,NavLink,NavbarToggle, NavBarBrand,NavbarCollapse, NavDropdownDivider,NavDropdownItem, NavDropdown} from "./components/BootstrapClient";
+import { Component } from "react";
+import Texteditor from "./components/Texteditor";
 
 
 // or less ideally
 
 export default function Home() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <>
+    <Navbar expand="lg" className="bg-body-tertiary bg-dark">
       <Container>
-        <NavBarBrand href="#home">React-Bootstrap</NavBarBrand>
+        <NavBarBrand href="#home">TutaBeat</NavBarBrand>
         <NavbarToggle aria-controls="basic-navbar-nav" />
         <NavbarCollapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -29,5 +32,9 @@ export default function Home() {
         </NavbarCollapse>
       </Container>
     </Navbar>
+    <div className="container mb-1">
+    <Texteditor/>
+    </div>
+    </>
   );
 }

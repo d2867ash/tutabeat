@@ -1,5 +1,7 @@
 'use client'
+
 import React, { useState } from 'react'
+
 
 export default function Texteditor() {
   const [text, settext] = useState('');
@@ -17,15 +19,16 @@ const handlerOnLowClick=()=>{
   settext(newtext); 
 }
 
-const handlerOnClearClick=()=>{
-  let newtext = "";
-  settext(newtext);
-}
+  function handlerOnClearClick() {
+    let newtext = "";
+    settext(newtext);
+  }
 const handlerOnCopyClick=()=>{
   navigator.clipboard.writeText(text);
 }
 const handlerOnRemoveExtraSpaceClick=()=>{
   let newtext =  text.split(/[ ]+/);
+  
   settext(newtext.join(" "));
 }
   return (

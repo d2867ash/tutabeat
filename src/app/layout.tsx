@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import {Navbar, Nav,Container,NavLink,NavbarToggle, NavBarBrand,NavbarCollapse, NavDropdownDivider,NavDropdownItem, NavDropdown} from "./components/BootstrapClient";
+
 
 
 
@@ -27,10 +29,34 @@ export default function RootLayout({
          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
          crossOrigin="anonymous"
        />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"></link>
      </head>
-
+     
       <body className={inter.className}>
+      <div>
+     <Navbar expand="lg" className="bg-body-tertiary bg-dark">
+      <Container>
+        <NavBarBrand href="#home">TutaBeat</NavBarBrand>
+        <NavbarToggle aria-controls="basic-navbar-nav" />
+        <NavbarCollapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <NavLink href="#home">Home</NavLink>
+            <NavLink href="#link">Link</NavLink>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdownItem href="#action/3.1">Action</NavDropdownItem>
+              <NavDropdownItem href="#action/3.2">
+                Another action
+              </NavDropdownItem>
+              <NavDropdownItem href="#action/3.3">Something</NavDropdownItem>
+              <NavDropdownDivider />
+              <NavDropdownItem href="#action/3.4">
+                Separated link
+              </NavDropdownItem>
+            </NavDropdown>
+          </Nav>
+        </NavbarCollapse>
+      </Container>
+    </Navbar></div>
         {children}
         
       </body>
